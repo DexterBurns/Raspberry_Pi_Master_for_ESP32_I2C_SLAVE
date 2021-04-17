@@ -27,7 +27,7 @@ def read_from_rpi_to_esp32():
 
         # let's clean received data
         unpacked = None
-        with Unpacker as unpacker:
+        with Unpacker() as unpacker:
             unpacker.write(raw_list)
             unpacked = unpacker.read()
 
