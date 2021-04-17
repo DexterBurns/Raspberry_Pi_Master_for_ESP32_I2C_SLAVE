@@ -20,6 +20,6 @@ def write_from_rpi_to_esp32():
             packed = packer.read()
         # change 1 of SMBus(1) to bus number on your RPI
         with SMBus(1) as smbus:
-            smbus.write_bytes(register, bytearray(packed))
+            smbus.write_bytes(slave_address, bytearray(packed)) #smbus wrote to address variable before, i changed it to write to the i2c device address now
     except Exception as e:
         print("ERROR: {}".format(e))
